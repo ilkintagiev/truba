@@ -1,170 +1,139 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>InvestTruba – Продажа труб</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продажа торфа - ЭкоТорф</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background: #2c5f2d;
+            color: white;
+            padding: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background: url('torf-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 0;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            background: white;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero {
+                padding: 60px 20px;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
-  <header class="bg-gray-900 text-white py-6 text-center">
-    <h1 class="text-3xl font-bold">InvestTruba</h1>
-    <p class="mt-2 text-lg">Продажа труб по выгодным ценам</p>
-  </header>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">ЭкоТорф</div>
+                <div class="menu">
+                    <a href="#home">Главная</a>
+                    <a href="#about">О торфе</a>
+                    <a href="#products">Каталог</a>
+                    <a href="#contacts">Контакты</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <main class="max-w-7xl mx-auto px-4 py-8">
-    <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Экологически чистый торф</h1>
+            <p>Лучшее решение для вашего сада и огорода</p>
+            <a href="#products" class="btn">Перейти к каталогу</a>
+        </div>
+    </section>
 
-    <div class="admin-section bg-white p-6 mt-8 rounded-xl shadow-lg">
-      <h3 class="text-xl font-semibold mb-4">Админ-панель</h3>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <input type="password" id="admin-password" placeholder="Введите пароль" class="border rounded-lg p-2 flex-1" />
-        <button class="btn bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700 transition" onclick="loginAdmin()">Войти</button>
-      </div>
+    <section id="about" class="container">
+        <h2>Почему выбирают наш торф?</h2>
+        <p>Наш торф проходит многоэтапную очистку и обработку, сохраняя все полезные свойства. Идеально подходит для:</p>
+        <ul>
+            <li>Мульчирования почвы</li>
+            <li>Улучшения структуры грунта</li>
+            <li>Выращивания растений</li>
+            <li>Ландшафтного дизайна</li>
+        </ul>
+    </section>
 
-      <div id="admin-panel" class="mt-6 hidden">
-        <h4 class="text-lg font-semibold mb-2">Добавить новую трубу</h4>
-        <form id="add-product-form" onsubmit="addProduct(event)" class="space-y-4">
-          <input id="new-title" placeholder="Название" required class="w-full border rounded-lg p-2" />
-          <input id="new-img" placeholder="URL изображения" required type="url" class="w-full border rounded-lg p-2" />
-          <input id="new-diam" placeholder="Диаметр" required class="w-full border rounded-lg p-2" />
-          <input id="new-price" placeholder="Цена" required type="text" pattern="\d+\s*₽/т" class="w-full border rounded-lg p-2" />
-          <textarea id="new-desc" placeholder="Описание" required class="w-full border rounded-lg p-2 h-32"></textarea>
-          <button type="submit" class="btn bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700 transition">Добавить</button>
-        </form>
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Каталог продукции</h2>
+            <div class="product-card">
+                <h3>Торф низинный</h3>
+                <p>20л - 500 руб</p>
+                <button>Заказать</button>
+            </div>
+            <div class="product-card">
+                <h3>Торф верховой</h3>
+                <p>15л - 400 руб</p>
+                <button>Заказать</button>
+            </div>
+            <div class="product-card">
+                <h3>Торфяные таблетки</h3>
+                <p>50 шт - 800 руб</p>
+                <button>Заказать</button>
+            </div>
+        </div>
+    </section>
 
-        <h4 class="text-lg font-semibold mt-6 mb-2">Список заявок</h4>
-        <pre id="orders" class="bg-gray-50 p-4 rounded-lg"></pre>
-      </div>
-    </div>
-  </main>
+    <section id="contacts" class="container">
+        <h2>Контакты</h2>
+        <p>Телефон: +7 (999) 123-45-67</p>
+        <p>Email: info@ecotorf.ru</p>
+        <p>Адрес: г. Москва, ул. Садовая 15</p>
+    </section>
 
-  <footer class="text-center py-6 text-gray-500">
-    © 2025 InvestTruba
-  </footer>
-
-  <script>
-    let products = JSON.parse(localStorage.getItem("products")) || [
-      {
-        title: "Труба 159мм, сталь 20",
-        image: "https://loremflickr.com/320/240/steel",
-        diameter: "159мм",
-        price: "55 000 ₽/т",
-        desc: "Подходит для газовых и водопроводных систем."
-      },
-      {
-        title: "Труба 273мм, бесшовная",
-        image: "https://loremflickr.com/321/241/pipe",
-        diameter: "273мм",
-        price: "65 000 ₽/т",
-        desc: "Высокая прочность, идеальна для нефтяной отрасли."
-      }
-    ];
-
-    let orders = JSON.parse(localStorage.getItem("orders")) || [];
-
-    function saveData() {
-      localStorage.setItem("products", JSON.stringify(products));
-      localStorage.setItem("orders", JSON.stringify(orders));
-    }
-
-    function renderProducts() {
-      const list = document.getElementById("product-list");
-      list.innerHTML = "";
-      products.forEach((p, i) => {
-        list.innerHTML += `
-          <div class="product bg-white rounded-xl shadow-lg p-6">
-            <h3 class="text-xl font-semibold">${p.title}</h3>
-            <img src="${p.image}" alt="${p.title}" class="w-full h-48 object-cover rounded-lg mt-4" />
-            <p class="mt-2"><b>Диаметр:</b> ${p.diameter}</p>
-            <p><b>Цена:</b> ${p.price}</p>
-            <p class="text-gray-600">${p.desc}</p>
-            <button class="btn bg-blue-600 text-white rounded-lg px-4 py-2 mt-4 hover:bg-blue-700 transition" onclick="showForm(${i})">Оформить заявку</button>
-            <button class="btn bg-red-600 text-white rounded-lg px-4 py-2 mt-2 hover:bg-red-700 transition hidden admin-only" onclick="deleteProduct(${i})">Удалить</button>
-            <form id="form-${i}" class="form mt-4 hidden space-y-4" onsubmit="sendOrder(event, ${i})">
-              <input placeholder="Ваше имя" id="name-${i}" required class="w-full border rounded-lg p-2" />
-              <input placeholder="Телефон" id="phone-${i}" required type="tel" pattern="\+?\d{10,}" class="w-full border rounded-lg p-2" />
-              <textarea placeholder="Комментарий" id="comment-${i}" class="w-full border rounded-lg p-2 h-24"></textarea>
-              <button type="submit" class="btn bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700 transition">Отправить</button>
-            </form>
-          </div>
-        `;
-      });
-      toggleAdminControls();
-    }
-
-    function showForm(i) {
-      document.getElementById(`form-${i}`).classList.toggle("hidden");
-    }
-
-    function sendOrder(event, i) {
-      event.preventDefault();
-      const name = document.getElementById(`name-${i}`).value;
-      const phone = document.getElementById(`phone-${i}`).value;
-      const comment = document.getElementById(`comment-${i}`).value;
-      orders.push({
-        product: products[i].title,
-        name, phone, comment,
-        date: new Date().toLocaleString("ru-RU")
-      });
-      saveData();
-      alert("Заявка отправлена!");
-      document.getElementById(`form-${i}`).reset();
-      document.getElementById(`form-${i}`).classList.add("hidden");
-      renderOrders();
-    }
-
-    function loginAdmin() {
-      const pass = document.getElementById("admin-password").value;
-      // In production, use proper authentication (e.g., server-side)
-      if (pass === "admin123") {
-        document.getElementById("admin-panel").classList.remove("hidden");
-        document.getElementById("admin-password").value = "";
-        renderOrders();
-        toggleAdminControls();
-      } else {
-        alert("Неверный пароль");
-      }
-    }
-
-    function toggleAdminControls() {
-      const isAdmin = !document.getElementById("admin-panel").classList.contains("hidden");
-      document.querySelectorAll(".admin-only").forEach(btn => {
-        btn.classList.toggle("hidden", !isAdmin);
-      });
-    }
-
-    function renderOrders() {
-      const text = orders.map(o => 
-        `${o.date}\n${o.name} (${o.phone}) заказал: ${o.product}\nКомментарий: ${o.comment}\n`
-      ).join("\n---\n");
-      document.getElementById("orders").textContent = text || "Заявок нет";
-    }
-
-    function addProduct(event) {
-      event.preventDefault();
-      const title = document.getElementById("new-title").value;
-      const image = document.getElementById("new-img").value;
-      const diameter = document.getElementById("new-diam").value;
-      const price = document.getElementById("new-price").value;
-      const desc = document.getElementById("new-desc").value;
-      products.push({ title, image, diameter, price, desc });
-      saveData();
-      renderProducts();
-      document.getElementById("add-product-form").reset();
-      alert("Продукт добавлен!");
-    }
-
-    function deleteProduct(i) {
-      if (confirm(`Удалить ${products[i].title}?`)) {
-        products.splice(i, 1);
-        saveData();
-        renderProducts();
-        alert("Продукт удален!");
-      }
-    }
-
-    renderProducts();
-  </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ЭкоТорф. Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>
